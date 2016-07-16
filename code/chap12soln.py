@@ -7,13 +7,13 @@ License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
 from __future__ import print_function
 
-import pandas
 import numpy as np
+import pandas
 import statsmodels.formula.api as smf
 
+import regression
 import thinkplot
 import thinkstats2
-import regression
 import timeseries
 
 

@@ -7,13 +7,12 @@ License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
 from __future__ import print_function, division
 
+import numpy as np
+
 import first
 import hypothesis
 import scatter
 import thinkstats2
-
-import numpy as np
-
 
 """This file contains a solution to exercises in Think Stats:
 

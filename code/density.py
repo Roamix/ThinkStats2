@@ -12,8 +12,8 @@ import random
 
 import brfss
 import first
-import thinkstats2
 import thinkplot
+import thinkstats2
 
 
 def Summarize(data):
@@ -28,7 +28,7 @@ def Summarize(data):
     print('std', std)
     print('median', median)
     print('skewness', thinkstats2.Skewness(data))
-    print('pearson skewness', 
+    print('pearson skewness',
           thinkstats2.PearsonMedianSkewness(data))
 
     return mean, median
@@ -47,9 +47,9 @@ def ComputeSkewnesses():
 
     y = 0.35
     VertLine(mean, y)
-    thinkplot.Text(mean-0.15, 0.1*y, 'mean', horizontalalignment='right')
+    thinkplot.Text(mean - 0.15, 0.1 * y, 'mean', horizontalalignment='right')
     VertLine(median, y)
-    thinkplot.Text(median+0.1, 0.1*y, 'median', horizontalalignment='left')
+    thinkplot.Text(median + 0.1, 0.1 * y, 'median', horizontalalignment='left')
 
     pdf = thinkstats2.EstimatedPdf(data)
     thinkplot.Pdf(pdf, label='birth weight')
@@ -64,9 +64,9 @@ def ComputeSkewnesses():
 
     y = 0.02499
     VertLine(mean, y)
-    thinkplot.Text(mean+1, 0.1*y, 'mean', horizontalalignment='left')
+    thinkplot.Text(mean + 1, 0.1 * y, 'mean', horizontalalignment='left')
     VertLine(median, y)
-    thinkplot.Text(median-1.5, 0.1*y, 'median', horizontalalignment='right')
+    thinkplot.Text(median - 1.5, 0.1 * y, 'median', horizontalalignment='right')
 
     pdf = thinkstats2.EstimatedPdf(data)
     thinkplot.Pdf(pdf, label='adult weight')

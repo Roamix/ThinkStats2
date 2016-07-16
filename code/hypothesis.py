@@ -7,17 +7,16 @@ License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
 from __future__ import print_function, division
 
+import copy
+import matplotlib.pyplot as pyplot
+import numpy as np
+import random
+
+import first
 import nsfg
 import nsfg2
-import first
-
-import thinkstats2
 import thinkplot
-
-import copy
-import random
-import numpy as np
-import matplotlib.pyplot as pyplot
+import thinkstats2
 
 
 class CoinTest(thinkstats2.HypothesisTest):

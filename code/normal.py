@@ -14,8 +14,8 @@ import scipy.stats
 
 import first
 import hypothesis
-import thinkstats2
 import thinkplot
+import thinkstats2
 
 
 class Normal(object):
@@ -119,7 +119,7 @@ class Normal(object):
 
         p: percentile rank 0-100
         """
-        return thinkstats2.EvalNormalCdfInverse(p/100, self.mu, self.sigma)
+        return thinkstats2.EvalNormalCdfInverse(p / 100, self.mu, self.sigma)
 
 
 def NormalPlotSamples(samples, plot=1, ylabel=''):

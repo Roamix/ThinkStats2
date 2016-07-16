@@ -7,9 +7,9 @@ License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
 from __future__ import print_function
 
-import sys
-import numpy as np
 import math
+import numpy as np
+import sys
 
 import brfss
 import thinkplot
@@ -130,9 +130,9 @@ def Correlations(df):
     print()
 
     print('pandas corr spearman', df.htm3.corr(df.wtkg2, method='spearman'))
-    print('thinkstats2 SpearmanCorr', 
+    print('thinkstats2 SpearmanCorr',
           thinkstats2.SpearmanCorr(df.htm3, df.wtkg2))
-    print('thinkstats2 SpearmanCorr log wtkg3', 
+    print('thinkstats2 SpearmanCorr log wtkg3',
           thinkstats2.SpearmanCorr(df.htm3, np.log(df.wtkg2)))
     print()
 

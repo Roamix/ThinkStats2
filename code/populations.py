@@ -9,9 +9,9 @@ from __future__ import print_function
 
 import csv
 import logging
-import sys
 import numpy as np
 import pandas
+import sys
 
 import thinkplot
 import thinkstats2
@@ -55,7 +55,7 @@ def MakeFigures():
 
     # pareto plot
     xs, ys = thinkstats2.RenderParetoCdf(xmin=5000, alpha=1.4, low=0, high=1e7)
-    thinkplot.Plot(np.log10(xs), 1-ys, label='model', color='0.8')
+    thinkplot.Plot(np.log10(xs), 1 - ys, label='model', color='0.8')
 
     thinkplot.Cdf(cdf_log, complement=True) 
     thinkplot.Config(xlabel='log10 population',

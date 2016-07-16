@@ -99,9 +99,9 @@ def MakeFigures(df):
 
     # pareto plot
     # for the model I chose parameters by hand to fit the tail
-    xs, ys = thinkstats2.RenderParetoCdf(xmin=55000, alpha=2.5, 
+    xs, ys = thinkstats2.RenderParetoCdf(xmin=55000, alpha=2.5,
                                          low=0, high=250000)
-    thinkplot.Plot(xs, 1-ys, label='model', color='0.8')
+    thinkplot.Plot(xs, 1 - ys, label='model', color='0.8')
 
     thinkplot.Cdf(cdf, complement=True) 
     thinkplot.Save(root='hinc_pareto',

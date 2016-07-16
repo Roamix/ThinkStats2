@@ -11,8 +11,8 @@ import numpy as np
 import pandas
 
 import nsfg
-import thinkstats2
 import thinkplot
+import thinkstats2
 
 """
 
@@ -154,7 +154,7 @@ class HazardFunction(object):
         """
         ts = self.series.index
         ss = (1 - self.series).cumprod()
-        cdf = thinkstats2.Cdf(ts, 1-ss)
+        cdf = thinkstats2.Cdf(ts, 1 - ss)
         sf = SurvivalFunction(cdf, label=label)
         return sf
 
@@ -592,7 +592,7 @@ def PlotResampledByDecade(resps, iters=11, predict_flag=False, omit=None):
     predict_flag: whether to also plot predictions
     """
     for i in range(iters):
-        samples = [thinkstats2.ResampleRowsWeighted(resp) 
+        samples = [thinkstats2.ResampleRowsWeighted(resp)
                    for resp in resps]
         sample = pandas.concat(samples, ignore_index=True)
         groups = sample.groupby('decade')

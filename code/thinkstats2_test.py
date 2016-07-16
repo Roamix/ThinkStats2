@@ -7,14 +7,14 @@ License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
 from __future__ import print_function, division
 
-import unittest
-import random
-
-from collections import Counter
 import numpy as np
+import random
+import unittest
+from collections import Counter
 
-import thinkstats2
 import thinkplot
+import thinkstats2
+
 
 class Test(unittest.TestCase):
 
@@ -166,7 +166,7 @@ class Test(unittest.TestCase):
         self.assertAlmostEqual(pmf4.Mean(), 1.4291667)
 
     def testPmfProbLess(self):
-        d6 = thinkstats2.Pmf(range(1,7))
+        d6 = thinkstats2.Pmf(range(1, 7))
         self.assertEqual(d6.ProbLess(4), 0.5)
         self.assertEqual(d6.ProbGreater(3), 0.5)
         two = d6 + d6
@@ -177,7 +177,7 @@ class Test(unittest.TestCase):
         self.assertAlmostEqual(two.ProbLess(three), 0.778549382716049)
 
     def testPmfMax(self):
-        d6 = thinkstats2.Pmf(range(1,7))
+        d6 = thinkstats2.Pmf(range(1, 7))
         two = d6 + d6
         three = two + d6
         cdf = three.Max(6)

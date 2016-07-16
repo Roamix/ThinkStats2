@@ -12,8 +12,8 @@ import random
 
 import first
 import normal
-import thinkstats2
 import thinkplot
+import thinkstats2
 
 
 def PlotPregLengths(live, firsts, others):
@@ -114,11 +114,11 @@ def TestIntervention():
 
     3) Change in gender gap was 1.4 points (p-value 0.002, significant).
     """
-    male_before = normal.Normal(3.57, 0.28**2)
-    male_after = normal.Normal(3.44, 0.16**2)
+    male_before = normal.Normal(3.57, 0.28 ** 2)
+    male_after = normal.Normal(3.44, 0.16 ** 2)
 
-    female_before = normal.Normal(1.91, 0.32**2)
-    female_after = normal.Normal(3.18, 0.16**2)
+    female_before = normal.Normal(1.91, 0.32 ** 2)
+    female_after = normal.Normal(3.18, 0.16 ** 2)
 
     diff_before = female_before - male_before
     print('mean, p-value', diff_before.mu, 1-diff_before.Prob(0))

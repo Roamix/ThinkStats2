@@ -7,16 +7,14 @@ License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
 from __future__ import print_function
 
-import thinkstats2
-import thinkplot
-
 import math
-import random
 import numpy as np
-
+import random
 from scipy import stats
-from estimation import RMSE, MeanError
 
+import thinkplot
+import thinkstats2
+from estimation import RMSE, MeanError
 
 """This file contains a solution to exercises in Think Stats:
 

@@ -8,7 +8,6 @@ License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 from __future__ import print_function
 
 import math
-
 import numpy as np
 import pandas
 
@@ -121,8 +120,8 @@ def MakeNormalCdf():
     mus = [1.0, 2.0, 3.0]
     sigmas = [0.5, 0.4, 0.3]
     for mu, sigma in zip(mus, sigmas):
-        xs, ps = thinkstats2.RenderNormalCdf(mu=mu, sigma=sigma, 
-                                               low=-1.0, high=4.0)
+        xs, ps = thinkstats2.RenderNormalCdf(mu=mu, sigma=sigma,
+                                             low=-1.0, high=4.0)
         label = r'$\mu=%g$, $\sigma=%g$' % (mu, sigma)
         thinkplot.Plot(xs, ps, label=label)
 

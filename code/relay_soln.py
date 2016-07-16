@@ -5,10 +5,9 @@ Copyright 2014 Allen B. Downey
 License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 """
 
-import thinkstats2
-import thinkplot
-
 import relay
+import thinkplot
+import thinkstats2
 
 
 def ObservedPmf(pmf, speed, label=None):

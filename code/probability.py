@@ -10,10 +10,10 @@ from __future__ import print_function
 import math
 import numpy as np
 
-import nsfg
 import first
-import thinkstats2
+import nsfg
 import thinkplot
+import thinkstats2
 
 
 def MakeHists(live):
@@ -34,7 +34,7 @@ def MakeHists(live):
     thinkplot.SubPlot(2)
     thinkplot.Pmf(hist)
 
-    thinkplot.Save(root='probability_agepreg_hist', 
+    thinkplot.Save(root='probability_agepreg_hist',
                    xlabel='years',
                    axis=[0, 45, 0, 700])
 

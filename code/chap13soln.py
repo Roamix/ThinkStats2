@@ -7,12 +7,12 @@ License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
 from __future__ import print_function
 
-import pandas
 import numpy as np
+import pandas
 
+import survival
 import thinkplot
 import thinkstats2
-import survival
 
 
 def CleanData(resp):
@@ -38,7 +38,7 @@ def ResampleDivorceCurve(resps):
     resps: list of respondent DataFrames
     """
     for _ in range(41):
-        samples = [thinkstats2.ResampleRowsWeighted(resp) 
+        samples = [thinkstats2.ResampleRowsWeighted(resp)
                    for resp in resps]
         sample = pandas.concat(samples, ignore_index=True)
         PlotDivorceCurveByDecade(sample, color='#225EA8', alpha=0.1)
@@ -53,7 +53,7 @@ def ResampleDivorceCurveByDecade(resps):
     resps: list of respondent DataFrames    
     """
     for i in range(41):
-        samples = [thinkstats2.ResampleRowsWeighted(resp) 
+        samples = [thinkstats2.ResampleRowsWeighted(resp)
                    for resp in resps]
         sample = pandas.concat(samples, ignore_index=True)
         groups = sample.groupby('decade')

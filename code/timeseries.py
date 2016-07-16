@@ -7,12 +7,11 @@ License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
 from __future__ import print_function
 
-import pandas
+import matplotlib.pyplot as pyplot
 import numpy as np
+import pandas
 import statsmodels.formula.api as smf
 import statsmodels.tsa.stattools as smtsa
-
-import matplotlib.pyplot as pyplot
 
 import thinkplot
 import thinkstats2
@@ -85,7 +84,7 @@ def PlotDailies(dailies):
     """
     thinkplot.PrePlot(rows=3)
     for i, (name, daily) in enumerate(dailies.items()):
-        thinkplot.SubPlot(i+1)
+        thinkplot.SubPlot(i + 1)
         title = 'price per gram ($)' if i == 0 else ''
         thinkplot.Config(ylim=[0, 20], title=title)
         thinkplot.Scatter(daily.ppg, s=10, label=name)
@@ -197,7 +196,7 @@ def SimulateIntervals(daily, iters=101, func=RunLinearModel):
         fake = subset.copy()
 
         for _ in range(iters):
-            fake.ppg = (results.fittedvalues + 
+            fake.ppg = (results.fittedvalues +
                         thinkstats2.Resample(results.resid))
             _, fake_results = func(fake)
             result_seq.append(fake_results)
@@ -496,7 +495,7 @@ def MakeAcfPlot(dailies):
 
     thinkplot.PrePlot(cols=2)
     PlotAutoCorrelation(dailies, add_weekly=False)
-    thinkplot.Config(axis=axis, 
+    thinkplot.Config(axis=axis,
                      loc='lower right',
                      ylabel='correlation',
                      xlabel='lag (day)')

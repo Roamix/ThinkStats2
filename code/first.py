@@ -11,8 +11,8 @@ import math
 import numpy as np
 
 import nsfg
-import thinkstats2
 import thinkplot
+import thinkstats2
 
 
 def MakeFrames():
@@ -75,7 +75,7 @@ def PrintExtremes(live):
     hist = thinkstats2.Hist(live.prglngth)
     thinkplot.Hist(hist, label='live births')
 
-    thinkplot.Save(root='first_nsfg_hist_live', 
+    thinkplot.Save(root='first_nsfg_hist_live',
                    title='Histogram',
                    xlabel='weeks',
                    ylabel='frequency')
@@ -97,27 +97,27 @@ def MakeHists(live):
     """
     hist = thinkstats2.Hist(live.birthwgt_lb, label='birthwgt_lb')
     thinkplot.Hist(hist)
-    thinkplot.Save(root='first_wgt_lb_hist', 
+    thinkplot.Save(root='first_wgt_lb_hist',
                    xlabel='pounds',
                    ylabel='frequency',
                    axis=[-1, 14, 0, 3200])
 
     hist = thinkstats2.Hist(live.birthwgt_oz, label='birthwgt_oz')
     thinkplot.Hist(hist)
-    thinkplot.Save(root='first_wgt_oz_hist', 
+    thinkplot.Save(root='first_wgt_oz_hist',
                    xlabel='ounces',
                    ylabel='frequency',
                    axis=[-1, 16, 0, 1200])
 
     hist = thinkstats2.Hist(np.floor(live.agepreg), label='agepreg')
     thinkplot.Hist(hist)
-    thinkplot.Save(root='first_agepreg_hist', 
+    thinkplot.Save(root='first_agepreg_hist',
                    xlabel='years',
                    ylabel='frequency')
 
     hist = thinkstats2.Hist(live.prglngth, label='prglngth')
     thinkplot.Hist(hist)
-    thinkplot.Save(root='first_prglngth_hist', 
+    thinkplot.Save(root='first_prglngth_hist',
                    xlabel='weeks',
                    ylabel='frequency',
                    axis=[-1, 53, 0, 5000])
@@ -137,7 +137,7 @@ def MakeComparison(firsts, others):
     thinkplot.Hist(first_hist, align='right', width=width)
     thinkplot.Hist(other_hist, align='left', width=width)
 
-    thinkplot.Save(root='first_nsfg_hist', 
+    thinkplot.Save(root='first_nsfg_hist',
                    title='Histogram',
                    xlabel='weeks',
                    ylabel='frequency',

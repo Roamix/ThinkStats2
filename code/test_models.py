@@ -7,8 +7,8 @@ License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
 import sys
 
-import thinkstats2
 import thinkplot
+import thinkstats2
 
 
 def ReadFile(filename):

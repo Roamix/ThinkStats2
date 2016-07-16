@@ -12,7 +12,6 @@ import numpy as np
 import thinkplot
 import thinkstats2
 
-
 """
 Sample line.
 

@@ -8,12 +8,12 @@ License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 from __future__ import print_function
 
 import math
-import sys
-import pandas
 import numpy as np
+import pandas
+import sys
 
-import thinkstats2
 import thinkplot
+import thinkstats2
 
 
 def Summarize(df, column, title):

@@ -7,14 +7,13 @@ License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
 from __future__ import print_function
 
-import sys
-import numpy as np
 import math
+import numpy as np
+import sys
 
 import first
 import thinkplot
 import thinkstats2
-
 
 """This file contains a solution to an exercise in Think Stats:
 
@@ -102,11 +101,11 @@ def main(script):
     ages = live.agepreg
     weights = live.totalwgt_lb
     print('thinkstats2 Corr', thinkstats2.Corr(ages, weights))
-    print('thinkstats2 SpearmanCorr', 
+    print('thinkstats2 SpearmanCorr',
           thinkstats2.SpearmanCorr(ages, weights))
 
     ScatterPlot(ages, weights, alpha=0.1)
-    thinkplot.Save(root='chap07scatter1', 
+    thinkplot.Save(root='chap07scatter1',
                    legend=False,
                    formats=['jpg'])
 
