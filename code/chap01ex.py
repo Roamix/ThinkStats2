@@ -13,6 +13,11 @@ import sys
 import nsfg
 import thinkstats2
 
+def ReadFemResp(dct_f="2002FemResp.dct", dat_f="2002FemResp.dat.gz"):
+    dct = thinkstats2.ReadStataDct(dct_f)
+    df = dct.ReadFixedWidth(dat_f, compression="gzip")
+    #CleanFemPreg(df)
+    return df
 
 def main(script):
     """Tests the functions in this module.
@@ -20,6 +25,10 @@ def main(script):
     script: string script name
     """
     print('%s: All tests passed.' % script)
+
+#    df = ReadFemResp()
+
+
 
 
 if __name__ == '__main__':
