@@ -5,6 +5,8 @@ import nsfg
 import chap01ex as c1
 import datsys as ds
 import matplotlib.pyplot as plt
+import thinkstats2 as ts2
+import thinkplot as tp
 
 #1  data import
 dfp = nsfg.ReadFemPreg()
@@ -31,11 +33,17 @@ laters = live[live.birthord>1]
 ##******DO EXCERCISE 2.2 and 2.4*******
 
 #5  Probability mass functions/Probabilty distribution functions
+"""
+# PMF is done manually with
+pmfpl2 = [dictpl.values[x]/float(len(firsts.prglngth)) for x in range(0,len(dictpl))]
+***Make it a dict instead with dictpl.keys() as keys***
+"""
 n1, bins1, typ1 = plt.hist(firsts.prglngth, bins=range(0, int(max(firsts.prglngth))+1), normed=True)
 n2, bins2, typ2 = plt.hist(laters.prglngth, bins=range(0, int(max(laters.prglngth))+1), normed=True)
 #or firsts.prglngth.hist(bins=range(0, int(max(firsts.prglngth))+1), normed=True)
 
 #Calculating and plotting probabiltiy differences between two groups
+plt.clf()
 weeks = bins1[:-1]
 diffs = [100*(n1[week]-n2[week]) for week in weeks]  #scalar 100 for bigger bars
 plt.bar(weeks[35:47], diffs[35:47])
