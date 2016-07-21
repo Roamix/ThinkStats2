@@ -2,15 +2,38 @@
 import numpy as np
 import pandas as pd
 import nsfg
-import chap01ex as c1
+#import chap01ex as c1
 import datsys as ds
 import matplotlib.pyplot as plt
 import thinkstats2 as ts2
 import thinkplot as tp
 
+def ReadFemResp(dct_f="2002FemResp.dct", dat_f="2002FemResp.dat.gz"):
+    dct = ts2.ReadStataDct(dct_f)
+    df = dct.ReadFixedWidth(dat_f, compression="gzip")
+    #CleanFemPreg(df)
+    return df
+
+def ReadBabyBoom(dat_f="babyboom.dat"):
+    var_info = [
+        ('time', 1, 8, int),
+        ('sex', 9, 16, int),
+        ('weight_g', 17, 24, int),
+        ('minutes', 25, 32, int),
+    ]
+    columns = ['name', 'start', 'end', 'type']
+    variables = pd.DataFrame(var_info, columns=columns)
+    variables.end += 1
+    dct = ts2.FixedWidthVariables(variables, index_base=1)
+
+    df = dct.ReadFixedWidth(dat_f, skiprows=59)
+    return df
+
+
 #1  data import
 dfp = nsfg.ReadFemPreg()
-dfr = c1.ReadFemResp()
+#dfr = c1.ReadFemResp()
+dfr = ReadFemResp()
 
 #2  data cleaning
 nsfg.CleanFemPreg(dfp) #Clean data however it has to be done
@@ -60,4 +83,26 @@ plt.show()
     n3, bins3, rec3 = plt.hist(pl,bins=range(0,max(pl)+1), normed=True,cumulative=True)
     firsts.totalwgt_lb.hist(bins=150, normed=True, cumulative=True)
     ts2.Cdf(pl)
+
+    ***numpy
+    bins = 200
+    n4, bin_edges, rec4 = plt.hist(diffs.dropna(), bins=bins, normed=True)
+    cdf = np.cumsum(n4)
+    plt.plot(bin_edges[1:], cdf)
+
+"""
+
+
+#7 Modeling distributions
+dfb = ReadBabyBoom()
+#Exponential distribution - used for modeling distribution of time intervals between events
+"""
+diffs = dfb.minutes.diff()
+bins = 200
+n4, bin_edges = plt.hist(diffs.dropna(), bins=bins, normed=True)
+cdf = np.cumsum(n4)
+plt.plot(bin_edges[1:], cdf)
+#complementary (ccdf)
+ccdf = 1 - df
+plt.plot(bin_edges[1:], np.log(ccdf))
 """
