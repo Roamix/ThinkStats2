@@ -24,13 +24,17 @@ firsts = live[live.birthord==1]
 laters = live[live.birthord>1]
 
 
-    #Take a look at the different columns and understand the data.
-    #Look for inconsistencies and errors
+"""
+    Take a look at the different columns and understand the data.
+    Look for inconsistencies and errors
+"""
 
 #4  Plotting, analysing distributions, and summary statistics
-    #see plot_test.py
+"""
+    see plot_test.py
 
-##******DO EXCERCISE 2.2 and 2.4*******
+******DO EXCERCISE 2.2 and 2.4*******
+"""
 
 #5  Probability mass functions/Probabilty distribution functions
 """
@@ -50,3 +54,10 @@ plt.bar(weeks[35:47], diffs[35:47])
 plt.show()
 
 #******DO CHAPTER 3 EXCERCISES*******
+
+#6  CDF (Cumulative Distribution Function)
+"""
+    n3, bins3, rec3 = plt.hist(pl,bins=range(0,max(pl)+1), normed=True,cumulative=True)
+    firsts.totalwgt_lb.hist(bins=150, normed=True, cumulative=True)
+    ts2.Cdf(pl)
+"""
