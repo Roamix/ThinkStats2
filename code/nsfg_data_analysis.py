@@ -7,6 +7,7 @@ import datsys as ds
 import matplotlib.pyplot as plt
 import thinkstats2 as ts2
 import thinkplot as tp
+import scipy.stats as ss
 
 def ReadFemResp(dct_f="2002FemResp.dct", dat_f="2002FemResp.dat.gz"):
     dct = ts2.ReadStataDct(dct_f)
@@ -106,3 +107,19 @@ plt.plot(bin_edges[1:], cdf)
 ccdf = 1 - df
 plt.plot(bin_edges[1:], np.log(ccdf))
 """
+
+#Normal distribution
+"""
+scipy.stats.norm()
+"""
+#Normal probability plot
+"""
+x = firsts.birthwgt_lb.dropna().sort_values()
+gauss=np.random.normal(0, 1, len(x))
+plt.plot(sort(gauss), x.values)
+
+Alternatively:
+ts2.NormalProbabilityPlot(x)
+ss.probplot(firsts.birthwgt_lb.dropna(), plot=plt)
+"""
+
